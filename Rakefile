@@ -150,6 +150,17 @@ vim_plugin_task "irblack",          "git://github.com/wgibbs/vim-irblack.git"
 #vim_plugin_task "ruby_debugger",    "git://github.com/astashov/vim-ruby-debugger.git"
 vim_plugin_task "rvm",              "git://github.com/csexton/rvm.vim.git"
 vim_plugin_task "vim-mac-classic-theme", "https://github.com/nelstrom/vim-mac-classic-theme.git"
+vim_plugin_task "snipmate-snippets", "git://github.com/scrooloose/snipmate-snippets.git" do
+  Dir.chdir "tmp/snipmate-snippets" do
+    sh "rake deploy_local"
+  end
+end
+
+vim_plugin_task "jasmine-snippets" do
+  sh "curl http://www.vim.org/scripts/download_script.php?src_id=13887 > tmp/javascript-jasmine.snippet"
+  dest = File.expand_path("../", __FILE__)
+  sh "cp tmp/javascript-jasmine.snippets #{dest}/snippets/"
+end
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"

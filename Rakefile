@@ -121,7 +121,7 @@ def vim_plugin_task(name, repo=nil)
 end
 
 vim_plugin_task "ack.vim",          "git://github.com/mileszs/ack.vim.git"
-vim_plugin_task "color-sampler",    "http://www.vim.org/scripts/download_script.php?src_id=12179"
+vim_plugin_task "Color-Sampler-Pack",    "git://github.com/vim-scripts/Color-Sampler-Pack.git"
 vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
 vim_plugin_task "fugitive",         "git://github.com/tpope/vim-fugitive.git"
 vim_plugin_task "git",              "git://github.com/tpope/vim-git.git"
@@ -133,14 +133,14 @@ vim_plugin_task "markdown_preview", "git://github.com/robgleeson/vim-markdown-pr
 vim_plugin_task "nerdtree",         "git://github.com/wycats/nerdtree.git"
 vim_plugin_task "nerdcommenter",    "git://github.com/ddollar/nerdcommenter.git"
 vim_plugin_task "surround",         "git://github.com/tpope/vim-surround.git"
-vim_plugin_task "taglist",          "http://vim.sourceforge.net/scripts/download_script.php?src_id=7701"
+vim_plugin_task "taglist.vim",     "git://github.com/vim-scripts/taglist.vim.git"
 vim_plugin_task "vividchalk",       "git://github.com/tpope/vim-vividchalk.git"
 vim_plugin_task "supertab",         "git://github.com/ervandew/supertab.git"
 vim_plugin_task "cucumber",         "git://github.com/tpope/vim-cucumber.git"
 vim_plugin_task "textile",          "git://github.com/timcharper/textile.vim.git"
 vim_plugin_task "rails",            "git://github.com/tpope/vim-rails.git"
 vim_plugin_task "rspec",            "git://github.com/taq/vim-rspec.git"
-vim_plugin_task "zoomwin",          "http://www.vim.org/scripts/download_script.php?src_id=9865"
+vim_plugin_task "ZoomWin",          "git://github.com/vim-scripts/ZoomWin.git"
 vim_plugin_task "snipmate",         "git://github.com/msanders/snipmate.vim.git"
 vim_plugin_task "markdown",         "git://github.com/tpope/vim-markdown.git"
 vim_plugin_task "align",            "git://github.com/tsaleh/vim-align.git"
@@ -149,8 +149,10 @@ vim_plugin_task "searchfold",       "git://github.com/vim-scripts/searchfold.vim
 vim_plugin_task "endwise",          "git://github.com/tpope/vim-endwise.git"
 vim_plugin_task "irblack",          "git://github.com/wgibbs/vim-irblack.git"
 vim_plugin_task "vim-coffee-script","git://github.com/kchmck/vim-coffee-script.git"
+vim_plugin_task "minibufexpl.vim",  "git://github.com/fholgado/minibufexpl.vim.git"
 vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git"
 #vim_plugin_task "ruby_debugger",    "git://github.com/astashov/vim-ruby-debugger.git"
+vim_plugin_task "vcscommand.vim", "git://github.com/vim-scripts/vcscommand.vim.git"
 vim_plugin_task "rvm",              "git://github.com/csexton/rvm.vim.git"
 vim_plugin_task "vim-mac-classic-theme", "https://github.com/nelstrom/vim-mac-classic-theme.git"
 vim_plugin_task "snipmate-snippets", "git://github.com/scrooloose/snipmate-snippets.git" do
@@ -160,7 +162,7 @@ vim_plugin_task "snipmate-snippets", "git://github.com/scrooloose/snipmate-snipp
 end
 
 vim_plugin_task "jasmine-snippets" do
-  sh "curl http://www.vim.org/scripts/download_script.php?src_id=13887 > tmp/javascript-jasmine.snippet"
+  sh "curl https://github.com/vim-scripts/Jasmine-snippets-for-snipMate/raw/master/javascript-jasmine.snippets > tmp/javascript-jasmine.snippets"
   dest = File.expand_path("../", __FILE__)
   sh "cp tmp/javascript-jasmine.snippets #{dest}/snippets/"
 end
@@ -205,12 +207,9 @@ vim_plugin_task "janus_themes" do
   end
 end
 
-vim_plugin_task "molokai" do
-  sh "curl http://www.vim.org/scripts/download_script.php?src_id=9750 > colors/molokai.vim"
-end
-vim_plugin_task "mustache" do
-  sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
-end
+#vim_plugin_task "mustache" do
+#  sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
+#end
 vim_plugin_task "vwilight" do
   sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > colors/vwilight.vim"
 end
